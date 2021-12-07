@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Monty Mole Dating Simulator</title>
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        background-color: burlywood;
+      }
+
+      .stuff {
+        text-align: center;
+      }
+
+      .btn1 {
+        border-radius: 200px;
+        font-size: 15px;
+        width: 250px;
+        background-color: lightblue;
+      }
+      .btn2 {
+        border-radius: 200px;
+        font-size: 15px;
+        width: 250px;
+        margin-left: 997.5px;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id = "app">
+      <div class = "stuff">
+        <h1>Monty Mole Dating Simulator</h1>
+        <img src = "src/montyMoleGlasses.png" id = "img"></img>
+        <h1 id = "dialogue">Select a Date</h1>
+        <br></br>
+      </div>
+      <button id = "btn1" class = "btn1" onclick = "btn1Action();">Date One</button>
+      <button id = "btn2" class = "btn2" onclick = "btn2Action();">...</button><br></br>
+      <button class = "btn1">...</button>
+      <button class = "btn2">...</button>
+      <br></br>
+
+      <h3 class = "stuff">Endings Won:<br></br>
+        [/\|/\]Date 1:[/\|/\]<br></br>
+        <em id = "d1e1">...</em><br></br>
+        <em id = "d1e2">...</em><br></br>
+        <em id = "d1e3">...</em><br></br>
+        <em id = "d1e4">...</em><br></br>
+        <em id = "d1e5">...</em><br></br>
+        <em id = "d1e6">...</em><br></br>
+        <em id = "d1e7">...</em><br></br>
+        <em id = "d1e8">...</em><br></br>
+      </h3>
+    </div>
+
+    <script>
+      //variables
+      var img = document.getElementById("img");
+      var dialogue = document.getElementById("dialogue");
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var cs = 0;
+      var cd = 0;
+      var d1E1Win = "...";
+      var d1E2Win = "...";
+      var d1E3Win = "...";
+      var d1E4Win = "...";
+      var d1E5Win = "...";
+      var d1E6Win = "...";
+      var d1E7Win = "...";
+      var d1E8Win = "...";
+      var name = prompt("Please Enter Your Name", "Player");
+      /*
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      DATE ONE
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      */
+      function d1S1() {
+        dialogue.textContent = '"Hey ' + name + ', are you ready to go on our date?"';
+        btn1.textContent = '"Yeah, I\'m ready."';
+        btn2.textContent = '"I\'m kind of nervous..."';
+        cs = 1;
+      }
+      function d1S1Point5() {
+        dialogue.textContent =
+          '"That\'s ok," he strokes your shoulder lightly, "you\'ll be fine. Trust me ' +
+          name +
+          '."';
+        btn1.textContent = '"Ok"';
+        btn2.textContent =
+          '"I don\'t think I can go... Goodbye Monty." You shut the door.';
+        cs = 1.5;
+      }
+      function d1E1() {
+        dialogue.textContent =
+          "END. You got the ending: Chicken (Bruh Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e1";
+        d1E1Win = "Chicken (Bruh Ending)";
+        saveGame();
+        loadGame();
+      }
+      function d1S2() {
+        dialogue.textContent =
+          'You go to the restaurant with Monty Mole. You get seated and start to talk. "This place is really nice don\'t you think?"';
+        btn1.textContent = '"Yeah, it is."';
+        btn2.textContent = '"It\'s nicer with you!"';
+        cs = 2;
+      }
+      function d1S2Point5() {
+        dialogue.textContent = '"Aww, thanks!" he says.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 2.5;
+      }
+      function d1S3() {
+        dialogue.textContent =
+          'The waitress walks up to your table. "Hey there you two! What will you be having?" she asks Monty, "I\'ll have the shrimp plate with a side of caviar." "Okay... And what will you be having?" She says to you.';
+        btn1.textContent =
+          '"I\'ll have some baby yoda chicken nuggies with bannana."';
+        btn2.textContent = '"I\'ll have what he is having."';
+        cs = 3;
+      }
+      function d1S31() {
+        dialogue.textContent =
+          '"Okay then. I\'ll be back soon with your orders!" the waitress leaves. "You like baby yoda chicken nuggies too ' +
+          name +
+          "? I thought that if I ordered something like that, you would think that I'm weird!\"";
+        btn1.textContent = '"Well I love baby yoda chicken nuggies!"';
+        btn2.textContent =
+          '"I just didn\'t know what to order and so I said the first thing that I saw..." You give him judgemental looks.';
+        cs = 31;
+      }
+      function d1S311() {
+        dialogue.textContent =
+          '"That\'s awesome!" he says. The waitress brings your food over to your table. "I hope you two enjoy your meals!" she says.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 311;
+      }
+      function d1S331() {
+        dialogue.textContent =
+          'You both have fun. You start talking about where you should go next. "So, do you want to go back to my house or..."';
+        btn1.textContent = '"Or what?"';
+        btn2.textContent = "...";
+        cs = 331;
+      }
+      function d1S341() {
+        dialogue.textContent =
+          '"I know this really cool spot near the old railway that we could go to."';
+        btn1.textContent = '"Lets go to your house."';
+        btn2.textContent = '"That spot sounds really cool! Let\'s go!"';
+        cs = 341;
+      }
+      function d1S351() {
+        dialogue.textContent =
+          'He brings you back to his house and you go inside. "So, do you want to watch a movie?"';
+        btn1.textContent =
+          '"Yeah, but could we get something to drink please? I\'m thirsty."';
+        btn2.textContent = "Look down in thought.";
+        cs = 351;
+      }
+      function d1S361() {
+        dialogue.textContent =
+          '"Yeah, sure!" he says. "I have a few things we could drink... What do you want?"';
+        btn1.textContent = '"Water."';
+        btn2.textContent = '"Milk!"';
+        cs = 361;
+      }
+      function d1S371() {
+        dialogue.textContent =
+          "He gets your water and you watch a movie on Netflix. You have a good time.";
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 371;
+      }
+      function d1E2() {
+        dialogue.textContent =
+          "END. You got the ending: Second Date (Ok Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e2";
+        d1E2Win = "Second Date (Ok Ending)";
+        saveGame();
+        loadGame();
+      }
+      function d1S3612() {
+        dialogue.textContent =
+          '"Really? I love milk!" he says. He gets the milk and you both chug it. You have the best time of your life.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 3612;
+      }
+      function d1E3() {
+        dialogue.textContent =
+          "END. You got the ending: Drink Milk Together Ending (Best Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e3";
+        d1E3Win = "Drink Milk Together Ending (Best Ending)";
+        saveGame();
+        loadGame();
+      }
+      function d1S3512() {
+        dialogue.textContent =
+          '"Are you wanting to look at my toes ' +
+          name +
+          '?" he says. "I have a foot fetish too!"';
+        btn1.textContent = '"Wait-"';
+        btn2.textContent = "...";
+        cs = 3512;
+      }
+      function d1S35121() {
+        dialogue.textContent =
+          '"Y\'know... I\'ve been wanting to make an OnlyFans..." he says. "You could take pictures of my feet!"';
+        btn1.textContent = '"Wha-"';
+        btn2.textContent = "...";
+        cs = 35121;
+      }
+      function d1E4() {
+        dialogue.textContent =
+          "END. You got the ending: OnlyFans Toes (Ending?) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e4";
+        d1E4Win = "OnlyFans Toes (Ending?)";
+        saveGame();
+        loadGame();
+      }
+      function d1S3412() {
+        dialogue.textContent =
+          'You go to the cool spot with Monty. "So this is it!" he says. "Let\'s sit down!"';
+        btn1.textContent = "Sit down.";
+        btn2.textContent = "...";
+        cs = 3412;
+      }
+      function d1S34121() {
+        dialogue.textContent =
+          "You watch the stars together. They are so beautiful...";
+        btn1.textContent = '"This was nice, but I have to go."';
+        btn2.textContent = '"How about we take a picture together!"';
+        cs = 34121;
+      }
+      function d1S341211() {
+        dialogue.textContent =
+          '"Okay." he says. He drives you back to your house. "I\'ll see you later ' +
+          name +
+          '!" he says.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 341211;
+      }
+      function d1S341212() {
+        dialogue.textContent =
+          '"Sure!" he says. You take a picture together. It is a very nice picture. You see a spot that would look really nice...';
+        btn1.textContent =
+          '"Hey Monty, you should get under that spot so I can take a picture!"';
+        btn2.textContent = "...";
+        cs = 341212;
+      }
+      function d1S3412121() {
+        dialogue.textContent =
+          '"That\'s a great idea!" he says. He gets under the spot and you take a picture. Seconds later a piece of rock falls and crushes Monty.';
+        btn1.textContent = '"NO!"';
+        btn2.textContent = "...";
+        cs = 3412121;
+      }
+      function d1S34121211() {
+        dialogue.textContent =
+          "You run to Monty and after finding no pulse you are devastated. Ironically, another piece of rock falls and hits you on the head just hard enough to give you severe brain damage. You no longer are aware of anything and continue your life being cared for by your family. You never do anything ever again...";
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 34121211;
+      }
+      function d1E5() {
+        dialogue.textContent =
+          "END. You got the ending: Brain Dead (Sad Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e5";
+        d1E5Win = "Brain Dead (Not Very Sad Ending)";
+        saveGame();
+        loadGame();
+      }
+      function d1S312() {
+        dialogue.textContent =
+          '"Oh... Okay" he says. Your orders come and you eat without talking to each-other. You leave the restaurant and he takes you home. You both say unenthusiastic goodbyes and never see each other again.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 312;
+      }
+      function d1E6() {
+        dialogue.textContent =
+          "END. You got the ending: Date Failed (HORRIBLE ENDING) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e6";
+        d1E6Win = "Date Falied (HORRIBLE ENDING)";
+        saveGame();
+        loadGame();
+      }
+      function d1S32() {
+        dialogue.textContent =
+          '"Okay then... I\'ll be back soon!" the waitress walks away.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 32;
+      }
+      function d1S321() {
+        dialogue.textContent =
+          'The waitress comes back with your food. "Enjoy, you two!" she says. The waitress walks off again. "This food is really good! Don\'t you think?"';
+        btn1.textContent = '"Yeah it is!"';
+        btn2.textContent = '"It tastes okay..."';
+        cs = 321;
+      }
+      function d1S3211() {
+        dialogue.textContent =
+          "You both enjoy your food and drive back to his house. He opens the door and you are greeted with a beautiful Japanese-themed home.";
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 3211;
+      }
+      function d1S3231() {
+        dialogue.textContent =
+          'You walk in and he closes the door behind you. "So, do you want to watch a movie?"';
+        btn1.textContent = '"Yeah, sure."';
+        btn2.textContent =
+          '"Yeah. Could you get us some drinks though? I\'m thirsty."';
+        cs = 3231;
+      }
+      function d1S3241() {
+        dialogue.textContent =
+          "You both sit down and pick a movie out to watch on Netflix. You end up watching a romantic horror movie. It's kinda a weird concept but you enjoy it. Near the end of the movie you feel your phone vibrate and take it out of you pocket. It is a call from your friend.";
+        btn1.textContent = "Answer it.";
+        btn2.textContent = "Ignore it.";
+        cs = 3241;
+      }
+      function d1S3251() {
+        dialogue.textContent =
+          'They want you to come over and play some Minecraft with them. You tell Monty you have to go because you are an epic gamer. "Okay, tonight was nice. I\'ll see you later!" he says.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 3251;
+      }
+      function d1S32412() {
+        dialogue.textContent = "You turn to Monty...";
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 32412;
+      }
+      function d1S324121() {
+        dialogue.textContent = "He kisses you.";
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 324121;
+      }
+      function d1S3241211() {
+        dialogue.textContent =
+          'He takes you back to your house. "Tonight was nice, I\'ll see you later!" he says.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 3241211;
+      }
+      function d1E7() {
+        dialogue.textContent =
+          "END. You got the ending: Kiss Ending (Good Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e7";
+        d1E7Win = "Kiss Ending (Good Ending)";
+        saveGame();
+        loadGame();
+      }
+      function d1S32312() {
+        dialogue.textContent =
+          '"Sure" he says with a weird look. He gets the drinks and you both sit down and pick a movie to watch on Netflix. A few minutes into the movie you feel a pain in your chest. You fall to the floor.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 32312;
+      }
+      function d1S323121() {
+        dialogue.textContent =
+          '"He stands over your body... He takes a shovel from his shed and buries you in the backyard. "You forgot to say please!" he yells.';
+        btn1.textContent = "Continue";
+        btn2.textContent = "...";
+        cs = 323121;
+      }
+      function d1E8() {
+        dialogue.textContent =
+          "END. You got the ending: Murder (Bad Ending) Reload page to restart.";
+        btn1.textContent = "...";
+        btn2.textContent = "...";
+        cs = "e8";
+        d1E8Win = "Murder (Bad Ending)";
+        saveGame();
+        loadGame();
+      }
+      /*
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      FUNCTIONS
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      [//////////]
+      */
+      function btn1Action() {
+        if (cs === 0) {
+          cd = 1;
+        }
+        if (cd === 1) {
+          d1B1Action();
+        }
+      }
+      function d1B1Action() {
+        if (cs === 0) {
+          d1S1();
+        } else if (cs === 1) {
+          d1S2();
+        } else if (cs === 2) {
+          d1S3();
+        } else if (cs === 3) {
+          d1S31();
+        } else if (cs === 31) {
+          d1S311();
+        } else if (cs === 311) {
+          d1S331();
+        } else if (cs === 331) {
+          d1S341();
+        } else if (cs === 341) {
+          d1S351();
+        } else if (cs === 351) {
+          d1S361();
+        } else if (cs === 361) {
+          d1S371();
+        } else if (cs === 371) {
+          d1E2();
+        } else if (cs === 3612) {
+          d1E3();
+        } else if (cs === 3512) {
+          d1S35121();
+        } else if (cs === 35121) {
+          d1E4();
+        } else if (cs === 3412) {
+          d1S34121();
+        } else if (cs === 34121) {
+          d1S341211();
+        } else if (cs === 341211) {
+          d1E2();
+        } else if (cs === 341212) {
+          d1S3412121();
+        } else if (cs === 3412121) {
+          d1S34121211();
+        } else if (cs === 34121211) {
+          d1E5();
+        } else if (cs === 312) {
+          d1E6();
+        } else if (cs === 32) {
+          d1S321();
+        } else if (cs === 321) {
+          d1S3211();
+        } else if (cs === 3211) {
+          d1S3231();
+        } else if (cs === 3231) {
+          d1S3241();
+        } else if (cs === 3241) {
+          d1S3251();
+        } else if (cs === 3251) {
+          d1E2();
+        } else if (cs === 32412) {
+          d1S324121();
+        } else if (cs === 324121) {
+          d1S3241211();
+        } else if (cs === 3241211) {
+          d1E7();
+        } else if (cs === 32312) {
+          d1S323121();
+        } else if (cs === 323121) {
+          d1E8();
+        } else if (cs === 2.5) {
+          d1S3();
+        } else if (cs === 1.5) {
+          d1S2();
+        }
+      }
+
+      function btn2Action() {
+        if (cs === 1) {
+          d1S1Point5();
+        } else if (cs === 1.5) {
+          d1E1();
+        } else if (cs === 2) {
+          d1S2Point5();
+        } else if (cs === 3) {
+          d1S32();
+        } else if (cs === 321) {
+          d1S3211();
+        } else if (cs === 3231) {
+          d1S32312();
+        } else if (cs === 3241) {
+          d1S32412();
+        } else if (cs === 31) {
+          d1S312();
+        } else if (cs === 341) {
+          d1S3412();
+        } else if (cs === 34121) {
+          d1S341212();
+        } else if (cs === 351) {
+          d1S3512();
+        } else if (cs === 361) {
+          d1S3612();
+        }
+      }
+
+      function saveGame() {
+        var gameSave = {
+          one: d1E1Win,
+          two: d1E2Win,
+          three: d1E3Win,
+          four: d1E4Win,
+          five: d1E5Win,
+          six: d1E6Win,
+          seven: d1E7Win,
+          eight: d1E8Win
+        };
+        localStorage.setItem("gameSave", JSON.stringify(gameSave));
+      }
+      function loadGame() {
+        var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+        if (typeof savedGame.one !== "undefined") d1E1Win = savedGame.one;
+        if (typeof savedGame.two !== "undefined") d1E2Win = savedGame.two;
+        if (typeof savedGame.three !== "undefined") d1E3Win = savedGame.three;
+        if (typeof savedGame.four !== "undefined") d1E4Win = savedGame.four;
+        if (typeof savedGame.five !== "undefined") d1E5Win = savedGame.five;
+        if (typeof savedGame.six !== "undefined") d1E6Win = savedGame.six;
+        if (typeof savedGame.seven !== "undefined") d1E7Win = savedGame.seven;
+        if (typeof savedGame.eight !== "undefined") d1E8Win = savedGame.eight;
+      }
+      window.onload = function () {
+        loadGame();
+        document.getElementById("d1e1").innerHTML = d1E1Win;
+        document.getElementById("d1e2").innerHTML = d1E2Win;
+        document.getElementById("d1e3").innerHTML = d1E3Win;
+        document.getElementById("d1e4").innerHTML = d1E4Win;
+        document.getElementById("d1e5").innerHTML = d1E5Win;
+        document.getElementById("d1e6").innerHTML = d1E6Win;
+        document.getElementById("d1e7").innerHTML = d1E7Win;
+        document.getElementById("d1e8").innerHTML = d1E8Win;
+      };
+    </script>
+  </body>
+</html>
