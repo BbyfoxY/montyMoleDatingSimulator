@@ -1,2 +1,3 @@
 # montyMoleDatingSimulator
-Cursed
+
+This is Monty Mole Dating Simulator and it is megacursed...
